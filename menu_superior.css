@@ -1,0 +1,64 @@
+#menu-superior{
+	background-color: #582C4D;
+	padding: calc(0.5rem);
+}
+
+#logo{
+	height: calc(1.4rem + 2px);
+}
+
+#barra-pesquisa{
+	width: calc(2rem + 2px);
+  	height: calc(1.4rem + 2px);
+  	!important;
+}
+
+#botao-pesquisar img{
+	position: relative;
+	padding-bottom: 7px;
+	width: 100%;
+}
+
+#botao-pesquisar{
+	width: 12%;
+	border-radius:0 0.25rem 0.25rem 0;
+	height: calc(1.4rem + 2px);
+}
+
+
+#menu-superior-foto-perfil{
+	height: calc(1.3rem + 2px);
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#menu-superior-perfil{
+	padding-top: calc(0.1rem);
+	padding-left: calc(0.5rem);
+	padding-right: calc(0.5rem);
+	padding-bottom: calc(0.1rem);
+}
+
+#menu-superior-perfil a span{
+	display: flex;
+}
+
+#menu-superior-perfil:hover{
+	background-color:#4B2642;
+	border-radius: calc(0.2rem);
+	border-color:#4B2642; 
+	border-left:  calc(0.2rem);
+	border-right: calc(0.2rem);
+}
+
+#menu-superior-palavra-perfil{
+	margin-left: calc(0.5rem);
+	text-decoration:none;
+	display: block;
+	font-family: inherit;
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	font-size: calc(0.9rem);
+	color: #FFFFFF;
+}
