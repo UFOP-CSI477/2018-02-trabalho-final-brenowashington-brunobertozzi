@@ -2,94 +2,66 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Nome da pessoa</title>
-
-	<link rel="stylesheet" type="text/css" href="geral.css">
+	<title>Perfil</title>
 	<link rel="stylesheet" type="text/css" href="perfil.css">
 	<link rel="stylesheet" type="text/css" href="menu_superior.css">
-	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="geral.css">
+	<link rel="stylesheet" type="text/css" href="bootstrao.css">
 
 </head>
-<body>
 
-	<nav class="navbar navbar-expand-lg navbar-light" id="menu-superior">
-		
-		<div class="row">
-
-			<div class="col-5 offset-1">
-				
-				<div style="display: inline-flex;">
-					
+<body class="fundo">
+	<div class="container menu-superior">
+		<div class="coluna1">
+			<div>
 				<a href="">
-						<span>
-							<img src="imagens_perfil/logotipo.png" id="logo">
-						</span>
+					<span>
+						<img src="imagens_perfil/logotipo.png" class="logo">
+					</span>
 				</a>
-				<form class="form-inline">
-				    <div class="input-group">
-
-				  	    <input  id="barra-pesquisa" class="form-control" type="search" placeholder="Pesquisar" aria-label="Search" aria-describedby="basic-addon1">
-				  	  
-					    <button id="botao-pesquisar" type="submit" class="btn-dark">
-					        <span>
-					        	<img src="imagens_perfil/pesquisar.png">
-					        </span>
-					    </button>
-					        
-					    </div>
-				    </div>
-				  </form>
 			</div>
-
-			
-
-			<div class="col-5 offset-1">
-
-				<ul class="navbar-nav ">
-					<li id="menu-superior-perfil">
-						<a href="" style="text-decoration:none;">
-							<span>
-								<img src="imagens_perfil/perfil.jpg" id="menu-superior-foto-perfil">
-								<span id="menu-superior-palavra-perfil">Perfil </span>
-							</span>
-						</a>
-					</li>
-
-					<li>
-						
-					</li>
-				</ul>
-			</div>
-
-
-
+			<div >
+				<form class="menu-superior-form">
+					<input type="text" placeholder="Pesquisar" name="barra-pesquisa" class="barra-pesquisa">
+					<button name="pesquisar" class="botao-pesquisar"><span><img src="imagens_perfil/pesquisar.png" class="pesquisar"></span></button>
+				</form>
+			</div>	
 		</div>
-		
-		
-	</nav>
-
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-   			<span class="navbar-toggler-icon"></span>
-  		</button>
-  		<a class="navbar-brand" href="#">Navbar</a>
-
-  		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-    		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-	      		<li class="nav-item active">
-	        		<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-	      		</li>
-	      		<li class="nav-item">
-	        		<a class="nav-link" href="#">Link</a>
-	      		</li>
-	      		<li class="nav-item">
-	        		<a class="nav-link disabled" href="#">Disabled</a>
-	      		</li>
-    		</ul>
-    		<form class="form-inline my-2 my-lg-0">
-      			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    		</form>
-    	</div>
+		<div class="menu-superior-separação">
+			<div class="menu-superior-perfil">
+				<a href="">
+					<span>
+						<img src="imagens_perfil/perfil.jpg" class="menu-superior-foto-perfil">
+						<span class="menu-superior-palavra-perfil">Perfil</span>
+					</span>
+				</a>
+			<div>
+				<div class="barrinha"></div>
+			</div>
+			<div>
+				<a href="inicio.html" class="menu-superior-inicio">Início</a>	
+			</div>
+			<div>	
+				<div class="barrinha" style="margin-right: 20px"></div>	
+			</div>
+			<div>
+				<a href="">
+					<span>
+						<img src="imagens_perfil/Not_amizades.png" class="menu-superior-not">
+					</span>
+				</a>
+			</div>
+			<div class="menu-superior-espaço-not">
+			</div>
+			<div>
+				<a href="">
+					<span>
+						<img src="imagens_perfil/Not_sussurros.png" class="menu-superior-not">
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>
