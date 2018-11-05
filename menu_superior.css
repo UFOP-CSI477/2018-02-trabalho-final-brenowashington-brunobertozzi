@@ -4,8 +4,9 @@
 	top: 0%; 	
     position: fixed;
     border: 1px solid #000000;
-	background: #580111;
+	background: #582C4D;
 	display: flex;
+	padding-bottom: 2px;
 }
 
 .menu-superior div{
@@ -16,23 +17,19 @@
     margin-bottom: 2px;
 }
 
-.coluna1{
-	left: 15%;
-	
-}
 
 .menu-superior-form{
 	align-items: center;
     display: flex;
     flex-direction: row;
 }
-
+	
 .botao-pesquisar{
 	background: #B24F61;
 	border-radius: 0 5% 5% 0; 	
 	border-color: transparent;
 	cursor: pointer;   
-	height: 21px;
+	height: 20px;
 	width: 35px; 
 }
 
@@ -52,8 +49,8 @@
 	text-rendering: auto;
     margin: 0em;
     font: 400 13.3333px Arial;
-	height: 21px;
-	width: 350px;
+	height: 20px;
+	width: 300px;
     border-color: transparent;
 	box-sizing: border-box;
     outline: 2px solid rgba(0, 0, 0, 0.1);
@@ -81,38 +78,36 @@
     
 }
 
-.menu-superior-separação{
-	padding-left: 30px;
-	margin-left: 230px;
-}
-
 .menu-superior-perfil{
 	display: block;
 }
 
 .menu-superior-perfil a span{
+	vertical-align: middle;
 	align-items: center;
     display: flex;
     flex-direction: row;
 }
 
 .menu-superior-perfil a{
-	background: rgba(88, 1, 17, 1);
+	background: transparent;
 	text-decoration:none;
 }
 
 .menu-superior-perfil a:hover{
-	background: #4B000E;
+	background: #42223A;
 	border-radius: 5%;
+	text-decoration: none;
+	color: white;
 }
 
 .menu-superior-foto-perfil{
-	margin-top: 3px;
+	margin-top: 5px;
 	margin-left: 10px;
 	margin-right: 4px;
 	padding-left: 1px;
-    height: 22px;
-    width: 22px;
+    height: 20px;
+    width: 20px;
     padding-bottom: 2px;
     overflow: hidden;
     
@@ -135,8 +130,8 @@
 }
 
 .menu-superior-inicio{
-	padding-bottom: 4px;
-    padding-top: 8px;
+	margin-bottom: 4px;
+    margin-top: 8px;
     padding-left: 10px;
     padding-right: 10px; 
 	margin-left: 10px;
@@ -148,6 +143,7 @@
 	line-height: normal;
 	font-size: 15px;
 	color: #FFFFFF;
+	text-decoration: none;
 }
 
 .menu-superior-espaço-not{
@@ -159,10 +155,9 @@
 	padding-right: 4px;
 	padding-left: 4px;
     height: 22px;
-    width: 18px;
+    width: 22	px;
     padding-bottom: 2px;
     overflow: hidden;
     border-radius: 12%;
-    
     opacity: 0.5;
 }

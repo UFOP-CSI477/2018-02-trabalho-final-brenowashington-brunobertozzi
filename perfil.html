@@ -6,60 +6,77 @@
 	<link rel="stylesheet" type="text/css" href="perfil.css">
 	<link rel="stylesheet" type="text/css" href="menu_superior.css">
 	<link rel="stylesheet" type="text/css" href="geral.css">
-	<link rel="stylesheet" type="text/css" href="bootstrao.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
 
 </head>
 
 <body class="fundo">
-	<div class="container menu-superior">
-		<div class="coluna1">
+
+	<div class="navbar menu-superior row">
+		<div class="col-md-5 offset-md-1">
 			<div>
 				<a href="">
 					<span>
-						<img src="imagens_perfil/logotipo.png" class="logo">
+						<img src="imagens_barra/logotipo.png" class="logo">
 					</span>
 				</a>
 			</div>
 			<div >
 				<form class="menu-superior-form">
 					<input type="text" placeholder="Pesquisar" name="barra-pesquisa" class="barra-pesquisa">
-					<button name="pesquisar" class="botao-pesquisar"><span><img src="imagens_perfil/pesquisar.png" class="pesquisar"></span></button>
+					<button name="pesquisar" class="botao-pesquisar"><span><img src="imagens_barra/pesquisar.png" class="pesquisar"></span></button>
 				</form>
 			</div>	
 		</div>
-		<div class="menu-superior-separação">
-			<div class="menu-superior-perfil">
+
+		<div class="col-md-5 offset-md-1">
+				<div class="menu-superior-perfil navbar-nav">
+					<a href="">
+						<span>
+							<img src="imagens_barra/perfil.jpg" class="menu-superior-foto-perfil">
+							<span class="menu-superior-palavra-perfil">Perfil</span>
+						</span>
+					</a>
+					<div>
+						<div class="barrinha"></div>
+					</div>
+					<div>
+						<a href="inicio.html" class="menu-superior-inicio">Início</a>	
+					</div>
+					<div>	
+						<div class="barrinha" style="margin-right: 20px"></div>	
+					</div>
+					<div>
+						<a href="">
+							<span>
+								<img src="imagens_barra/Not_amizades.png" class="menu-superior-not">
+							</span>
+						</a>
+					</div>
+					<div class="menu-superior-espaço-not">
+					</div>
+					<div>
+						<a href="">
+							<span>
+								<img src="imagens_barra/Not_sussurros.png" class="menu-superior-not">
+							</span>
+						</a>
+					</div>
+				</div>
+		</div>
+	</div>
+
+	<div class="container perfil">
+		<div class="row">
+			<div class="col-md-3">
 				<a href="">
 					<span>
-						<img src="imagens_perfil/perfil.jpg" class="menu-superior-foto-perfil">
-						<span class="menu-superior-palavra-perfil">Perfil</span>
-					</span>
-				</a>
-			<div>
-				<div class="barrinha"></div>
-			</div>
-			<div>
-				<a href="inicio.html" class="menu-superior-inicio">Início</a>	
-			</div>
-			<div>	
-				<div class="barrinha" style="margin-right: 20px"></div>	
-			</div>
-			<div>
-				<a href="">
-					<span>
-						<img src="imagens_perfil/Not_amizades.png" class="menu-superior-not">
+						<img class="imagem-perfil" src="imagens_perfil/perfil.jpg">
 					</span>
 				</a>
 			</div>
-			<div class="menu-superior-espaço-not">
-			</div>
-			<div>
-				<a href="">
-					<span>
-						<img src="imagens_perfil/Not_sussurros.png" class="menu-superior-not">
-					</span>
-				</a>
-			</div>
+			<div class="col-md-6"></div>	
+			<div class="col-md-3"></div>
 		</div>
 	</div>
 
