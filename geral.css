@@ -2,4 +2,83 @@
 	background: #DADADA;
 }
 
-	
+.post{
+	background: #D5B9B2;
+	border-radius: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.informacoes-post{
+	display: flex;
+	height: 25px;
+	padding-left: 5%;
+	margin-top: 10px;
+	align-items: center;
+}
+
+.informacoes-post img{
+	height: 100%;
+	border-radius: 50%;
+}
+
+.informacoes-post h6{
+	padding-left: 10px;
+	padding-top: 5px;
+}
+
+.informacoes-post p{
+	padding-left: 5px;	
+	padding-top: 17px;
+	font-family: inherit;
+	font-size: 10px;
+}
+
+.conteudo{
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 15px;
+}
+
+.conteudo p{
+	font-family: inherit;
+	font-size: 14px;
+	text-align: justify;
+}
+
+.conteudo img{
+	width: 100%;
+	border-radius: 5px;
+	border: solid 2px white;
+}
+
+.caixa-comentarios{
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 20px;
+	background-color: #A26769;
+	border-radius: 5px;
+}
+
+.comentario{
+	display: flex;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+.comentario p{
+	text-align: justify;
+	margin-right: 5px;
+}
+
+.comentario img{
+	margin-top: 4px;
+	margin-right: 5px;
+	height: 20px;	
+}
+
+.informacoes-comentario{
+	margin-left: 31px;
+	font-family: inherit;
+	font-size: 10px;
+}
