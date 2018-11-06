@@ -1,8 +1,33 @@
 .perfil{
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 .imagem-perfil{
 	width: 100%;
 	border-radius: 50%;
+	border: solid white 5px;
+}
+
+.post{
+	background: #D5B9B2;
+	border-radius: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.informacoes-post{
+	display: flex;
+	height: 25px;
+	padding-left: 15px;
+	align-items: center;
+}
+
+.informacoes-post img{
+	height: 100%;
+	border-radius: 50%;
+}
+
+.informacoes-post h6{
+	padding-left: 10px;
+	padding-top: 5px;
 }
