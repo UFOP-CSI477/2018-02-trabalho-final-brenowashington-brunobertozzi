@@ -12,7 +12,7 @@
 .informacoes-post{
 	display: flex;
 	height: 25px;
-	padding-left: 5%;
+	padding-left: 2.5%;
 	margin-top: 10px;
 	align-items: center;
 }
@@ -35,15 +35,17 @@
 }
 
 .conteudo{
-	margin-left: 5%;
-	margin-right: 5%;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
 	margin-top: 15px;
 }
 
 .conteudo p{
 	font-family: inherit;
-	font-size: 14px;
 	text-align: justify;
+	font-size: 14px;
+    font-weight: normal;
+    line-height: 1.38;
 }
 
 .conteudo img{
@@ -53,8 +55,8 @@
 }
 
 .caixa-comentarios{
-	margin-left: 5%;
-	margin-right: 5%;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
 	margin-top: 20px;
 	background-color: #A26769;
 	border-radius: 5px;
@@ -74,11 +76,34 @@
 .comentario img{
 	margin-top: 4px;
 	margin-right: 5px;
-	height: 20px;	
+	height: 20px;
 }
 
 .informacoes-comentario{
 	margin-left: 31px;
 	font-family: inherit;
 	font-size: 10px;
+}
+
+.acoes-comentario{
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+	display: flex;
+	
+}
+
+.acoes-comentario button{
+	background-color: transparent;
+	border:0;
+}
+
+.acoes-comentario button span{
+	display: flex;
+	align-items: center;
+}
+
+.acoes-comentario button img{
+	height: 25px;
+	margin-right: 3px;
+	overflow: hidden;
 }
