@@ -71,6 +71,9 @@
 .comentario p{
 	text-align: justify;
 	margin-right: 5px;
+	font-size: 14px;
+    font-weight: normal;
+    line-height: 1.38;
 }
 
 .comentario img{
@@ -95,6 +98,13 @@
 .acoes-comentario button{
 	background-color: transparent;
 	border:0;
+	margin: 0 auto;
+	padding-left: 60px;
+	padding-right: 60px;
+}
+
+.acoes-comentario button:hover{
+	cursor: pointer;
 }
 
 .acoes-comentario button span{
@@ -104,6 +114,6 @@
 
 .acoes-comentario button img{
 	height: 25px;
-	margin-right: 3px;
+	margin-right: 10px;
 	overflow: hidden;
 }
