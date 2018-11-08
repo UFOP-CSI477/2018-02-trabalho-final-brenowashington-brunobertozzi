@@ -3,10 +3,12 @@
 }
 
 .post{
-	background: #D5B9B2;
+	background: white;
 	border-radius: 10px;
 	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-bottom: 7px;
+	margin-bottom: 15px;
+	box-shadow:10px 10px 50px grey; 
 }
 
 .informacoes-post{
@@ -32,6 +34,7 @@
 	padding-top: 17px;
 	font-family: inherit;
 	font-size: 10px;
+	
 }
 
 .conteudo{
@@ -58,8 +61,8 @@
 	margin-left: 2.5%;
 	margin-right: 2.5%;
 	margin-top: 20px;
-	background-color: #A26769;
-	border-radius: 5px;
+	background-color: rgba(162,103,105,0.35);
+	border-radius: 10px;
 }
 
 .comentario{
@@ -89,10 +92,10 @@
 }
 
 .acoes-comentario{
+	margin-top: 10px;
 	margin-left: 2.5%;
 	margin-right: 2.5%;
 	display: flex;
-	
 }
 
 .acoes-comentario button{
@@ -116,4 +119,8 @@
 	height: 25px;
 	margin-right: 10px;
 	overflow: hidden;
+}
+
+#barra-comentario{
+	border: 2px solid rgba(255, 255, 255, 0.13);
 }
