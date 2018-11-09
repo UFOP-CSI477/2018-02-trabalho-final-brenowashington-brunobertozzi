@@ -11,6 +11,11 @@
 	box-shadow:10px 10px 50px grey; 
 }
 
+#criar-post{
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
 .informacoes-post{
 	display: flex;
 	height: 25px;
@@ -125,4 +130,17 @@
 
 #barra-comentario{
 	border: 2px solid rgba(255, 255, 255, 0.13);
+}
+
+
+
+#Enviar-post{
+	margin-top: 5px;
+	margin-left: 85%;
+	background-color: rgba(88,44,77,0.6);
+	color: white;
+}
+
+#Enviar-post:hover{
+	background-color: rgba(88,44,77,1);
 }
