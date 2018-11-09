@@ -38,6 +38,7 @@
 
 .informacoes-pessoais{
 	margin-left: 2.5%;
+	margin-right: 2.5%
 	display: flex;
 	margin-top: 10px;
 }
@@ -49,9 +50,17 @@
 .informacoes-pessoais a{
 	font-size: 13px;
     line-height: 15px;
+    margin-left: 4px;
 }
 
 .informacoes-pessoais{
+	font-size: 13px;
+    line-height: 15px;
+}
+
+.ver-mais{
+	margin-left: 70%;
+	margin-top: 5px;
 	font-size: 13px;
     line-height: 15px;
 }

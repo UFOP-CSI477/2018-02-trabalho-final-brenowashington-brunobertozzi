@@ -108,6 +108,8 @@
 
 .acoes-comentario button:hover{
 	cursor: pointer;
+	background: #D6D6D6;
+	border-radius: 10px;
 }
 
 .acoes-comentario button span{
