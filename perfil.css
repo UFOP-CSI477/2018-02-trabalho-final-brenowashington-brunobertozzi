@@ -64,3 +64,58 @@
 	font-size: 13px;
     line-height: 15px;
 }
+
+.perfil-inicio{
+	margin-bottom:15px;
+}
+
+.perfil-inicio a{
+	text-decoration: none;
+}
+
+.perfil-inicio a span img{
+	height: 25px;
+	width: 25px;
+	border-radius: 50%;
+}
+
+.perfil-inicio a span h3{
+	font-size: 15px;
+    line-height: 25px;
+    margin-left: 4px;
+    text-align: justify;
+    color: black;
+}
+
+.perfil-inicio a span{
+	display: flex;
+	align-items: initial;
+}
+
+.sussurros{
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+}
+
+.sussurros div{
+	margin-top: 5px;
+	display: flex;
+	background-color: rgba(219,171,190,0.6);
+	border-radius: 5px;
+}
+
+.sussurros img{
+	margin-top: 5px;
+	width: 15px;
+	height: 15px;
+	margin-left: 10px;
+}
+
+.sussurros p{
+	margin-top: 5px;
+	margin-left: 5px;
+	font-size: 15px;
+	line-height: 15px;
+	margin-right: 10px;
+	text-align: justify;
+}
