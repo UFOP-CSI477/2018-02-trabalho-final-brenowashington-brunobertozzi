@@ -159,3 +159,34 @@
     border-radius: 12%;
     opacity: 0.5;
 }
+
+.login input{
+	margin-right: 15px;
+	text-rendering: auto;
+    
+    font: 400 13.3333px Arial;
+	height: 20px;
+	width: 150px;
+    border-color: transparent;
+	box-sizing: border-box;
+    outline: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    position: relative;
+}
+
+.login button{
+	height: 20px;
+	font-size: 12px;
+	line-height: 15px;
+	align-items: baseline;
+	text-align: inherit;
+	background-color: #B24F61;
+	border-radius: 5px;
+	border: 0px;
+	color: white;
+}
+
+.login button:hover{
+	background: #994352;
+	cursor: pointer;
+}

@@ -156,3 +156,23 @@
     line-height: 28px;
     margin-bottom: 10px;
 }
+
+.conecte-se{
+	width: 100%;
+}
+
+.cadastro h1{
+	margin-left: 5%;
+	color: #582C4D;
+}
+
+.cadastro h3{
+	margin-left: 5%;
+	color: #582C4D;
+}
+
+.cadastro form{
+	margin-top: 25px;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+}

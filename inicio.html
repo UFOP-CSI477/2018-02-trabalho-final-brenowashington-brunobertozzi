@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Spotted</title>
 
 	<meta charset="utf-8">
+	<title>Cadastro</title>
+
 	<link rel="stylesheet" type="text/css" href="geral.css">
 	<link rel="stylesheet" type="text/css" href="menu_superior.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap.css">
@@ -22,168 +23,69 @@
 					</span>
 				</a>
 			</div>
-			<div >
-				<form class="menu-superior-form">
-					<input type="text" placeholder="Pesquisar" name="barra-pesquisa" class="barra-pesquisa">
-					<button name="pesquisar" class="botao-pesquisar"><span><img src="imagens_barra/pesquisar.png" class="pesquisar"></span></button>
-				</form>
-			</div>	
+
 		</div>
 
 		<div class="col-md-5 offset-md-1">
 			<div class="menu-superior-perfil navbar-nav">
-				<a href="">
-					<span>
-						<img src="imagens_barra/perfil.jpg" class="menu-superior-foto-perfil">
-						<span class="menu-superior-palavra-perfil">Perfil</span>
-					</span>
-				</a>
-				<div>
-					<div class="barrinha"></div>
-				</div>
-				<div>
-					<a href="inicio.html" class="menu-superior-inicio">Início</a>	
-				</div>
-				<div>	
-					<div class="barrinha" style="margin-right: 20px"></div>	
-				</div>
-				<div>
-					<a href="">
-						<span>
-							<img src="imagens_barra/Not_amizades.png" class="menu-superior-not">
-						</span>
-					</a>
-				</div>
-				<div class="menu-superior-espaço-not">
-				</div>
-				<div>
-					<a href="">
-						<span>
-							<img src="imagens_barra/Not_sussurros.png" class="menu-superior-not">
-						</span>
-					</a>
-				</div>
+				
+				<form class="menu-superior-form login">
+					<input type="text" placeholder="e-mail" name="e-mail-login" id="e-mail-login">
+					<input type="password" name="senha-login" placeholder="senha-login">
+					<button type="submit" name="logar">Login</button>
+				</form>
 			</div>
 		</div>
 	</div>
 
-	<div class="container-label perfil">
-		<div class="row">
-			<div class="col-md-1">
+
+	<div class="row perfil">
+		<div class="col-md-1">
+
+		</div>
+
+		<div class="col-md-4">
+			
+			<div class="container">
 				
-			</div>
-			<div class="col-md-3">
-				<div class="container perfil-inicio">
-					<a href="" >
-						<span>
-							<img src="imagens_perfil/perfil.jpg">
-							<h3>Maria Odette Brito de Miranda</h3>
-						</span>
-					</a>
-				</div>
-				
-				<div class="informacoes-perfil">
-					<div class="titulo-informacoes">
-						<img src="imagens_perfil/Informacoes_pessoais.png">
-						<h5>Sussurros</h5>
-					</div>
-
-					<div class="sussurros">
-						<div>
-							<img src="imagens_gerais/Sigilo.png">
-							<p>Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro </p>
-						</div>
-
-						<div>
-							<img src="imagens_gerais/Sigilo.png">
-							<p>Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro </p>
-						</div>
-					</div>
-
-				</div>
+				<img class="conecte-se" src="imagens_inicio/conecte-se.png">
 
 			</div>
 
-			<div class="col-md-7">
-				<div class="container">
-					
-					<div id="criar-post" class="post">
-						<div class="acoes-comentario">
-							<button>
-								<span>
-									<img src="imagens_gerais/Texto.png">
-									<h6>Publicação</h6>
-								</span>
-							</button>
+		</div>
 
-							<div>
-								<div id="barra-comentario" class="barrinha"></div>
-							</div>
+		<div class="col-md-6">
+			<div class="container">
 
-							<button>
-								<span>
-									<img src="imagens_gerais/Foto.png">
-									<h6>Foto</h6>
-								</span>
-							</button>	
+				<div class="cadastro post">
+					<h1>Cadastre-se</h1>
+					<h3>Crie sua conta gratuitamente</h3>
+					<form>
+						<div class="form-group">
+   							<input type="text" class="form-control" id="Nome-cadastro" placeholder="Nome completo">
 						</div>
 
-						<div class="conteudo">
-							<form class="form-group">
-								<textarea class="form-control" id="Texto-post" placeholder="Publique na linha do tempo de Maria Odette de Miranda"></textarea>
-								<button type="submit" class="btn" id="Enviar-post" >Publicar</button>
-							</form>
+						<div class="form-group">
+   							<input type="e-mail" class="form-control" id="e-mail-cadastro" placeholder="e-mail">
 						</div>
 
-					</div>
+						<div class="form-group">
+   							<label for="exampleFormControlInput1">Endereço de email</label>
+    						<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@exemplo.com">
+ 						</div>
 
-					<div class="post">
-						<div class="informacoes-post">
-							<img src="imagens_perfil/perfil.jpg">
-							<h6>Maria Odette Brito de Miranda</h6>
-							<p>06/11/2018 às 15:38</p>
-						</div>
-
-						<div class="conteudo">
-							<p>Textão da Dona Gretchen Textão da Dona Gretchen Textão da Dona Gretchen Textão da Dona Gretchen Textão da Dona Gretchen Textão da Dona Gretchen Textão da Dona Gretchen Textão da Dona Gretchen Textão da Dona Gretchen Textão da Dona Gretchen Textão da Dona Gretchen </p>
-							<img src="imagens_perfil/post.jpg">
-						</div>
-
-						<div class="caixa-comentarios">
-							<div class="comentario">
-								<img src="imagens_gerais/Sigilo.png">
-								<p>Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto </p>
-							</div>
-							<div class="informacoes-comentario">
-								<p>06/11/2018 às 16:15</p>
-							</div>
-						</div>
-
-						<div class="acoes-comentario">
-							<button>
-								<span>
-									<img src="imagens_gerais/Legal.png">
-									<h6>Legal!</h6>
-								</span>
-							</button>
-
-							<div>
-								<div id="barra-comentario" class="barrinha"></div>
-							</div>
-
-							<button>
-								<span>
-									<img src="imagens_gerais/Sussurrar.png">
-									<h6>Sussurrar</h6>
-								</span>
-							</button>	
-						</div>
-
-					</div>
+					</form>
 				</div>
+			
 			</div>
 		</div>
-	</div>	
+
+		<div class="col-md-1">
+
+		</div>
+	</div>
+
 
 </body>
+
 </html>
