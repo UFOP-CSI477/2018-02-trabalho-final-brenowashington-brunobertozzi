@@ -30,8 +30,8 @@
 			<div class="menu-superior-perfil navbar-nav">
 				
 				<form class="menu-superior-form login">
-					<input type="text" placeholder="e-mail" name="e-mail-login" id="e-mail-login">
-					<input type="password" name="senha-login" placeholder="senha-login">
+					<input type="text" placeholder="E-mail" name="e-mail-login" id="e-mail-login">
+					<input type="password" name="senha-login" placeholder="Senha">
 					<button type="submit" name="logar">Login</button>
 				</form>
 			</div>
@@ -62,21 +62,50 @@
 					<h3>Crie sua conta gratuitamente</h3>
 					<form>
 						<div class="form-group">
-   							<input type="text" class="form-control" id="Nome-cadastro" placeholder="Nome completo">
+							<label for="nome">Nome:</label>
+							<input type="text" class="form-control" id="nome" placeholder="Nome completo">
 						</div>
 
 						<div class="form-group">
-   							<input type="e-mail" class="form-control" id="e-mail-cadastro" placeholder="e-mail">
+							<label for="e-mail-cadastro">E-mail:</label>
+							<input type="e-mail" class="form-control" id="e-mail-cadastro" placeholder="E-mail">
 						</div>
 
 						<div class="form-group">
-   							<label for="exampleFormControlInput1">Endereço de email</label>
-    						<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@exemplo.com">
- 						</div>
+							<label for="data-nasc">Data de nascimento:</label>
+
+							<div class="form-inline espaco-caixas">
+								<select id="dia" class="form-control">
+									<option selected>Dia</option>
+									<option>1</option>
+								</select>
+
+								<select id="mes" class="form-control">
+									<option selected>Mês</option>
+									<option>1</option>
+								</select>
+
+								<select id="ano" class="form-control">
+									<option selected>Ano</option>
+									<option>1</option>
+								</select>
+
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="senha-cadastro">Senha:</label>
+							<input type="password" class="form-control" id="senha-cadastro" placeholder="Senha">
+						</div>
+
+						<div class="form-group">
+							<button type="submit" name="Cadastrar" id="Cadastrar" class="btn">Cadastrar</button> 
+						</div>
+
 
 					</form>
 				</div>
-			
+
 			</div>
 		</div>
 

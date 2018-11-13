@@ -176,3 +176,21 @@
 	margin-left: 2.5%;
 	margin-right: 2.5%;
 }
+
+#Cadastrar{
+	align-items: baseline;
+	text-align: inherit;
+	background-color: #B24F61;
+	border-radius: 5px;
+	border: 0px;
+	color: white;
+}
+
+#Cadastrar:hover{
+	background: #994352;
+	cursor: pointer;
+}
+
+.espaco-caixas select{
+	margin-right: 10px;
+}
