@@ -194,3 +194,31 @@
 .espaco-caixas select{
 	margin-right: 10px;
 }
+
+.titulo-conteudo{
+	margin-left: 2.5%;
+	margin-top: 10px;
+}
+
+.titulo-conteudo h3{
+	color:#582C4D;
+}
+
+.conteudo-perfil{
+	display: flex;
+	align-items: center;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+	margin-top: 1px;
+}
+
+.conteudo-perfil div{
+	width: 25%;
+	height: 25%;
+}
+
+.conteudo-perfil img{
+	width: 100%;
+	border-radius: 5px;
+	border: solid 2px white;
+}
