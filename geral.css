@@ -214,11 +214,21 @@
 
 .conteudo-perfil div{
 	width: 25%;
-	height: 25%;
+	height: 120px;
 }
 
 .conteudo-perfil img{
 	width: 100%;
+	height: 100%;
 	border-radius: 5px;
 	border: solid 2px white;
+}
+
+.conteudo-perfil a{
+	background-image:  url("imagens_gerais/gretchen-2.jpg");
+	align-self: baseline;
+	align-content: baseline;
+	background-size: ;
+	width: 100%;
+	height: 100%;
 }
