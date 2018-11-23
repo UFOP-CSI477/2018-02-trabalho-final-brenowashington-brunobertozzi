@@ -1,0 +1,40 @@
+.logo{
+	margin-top: 7px;
+	margin-left: 200px;
+	margin-right: 10px;
+	padding: 1px 1px 1px 1px;
+    height: 26px;
+    width: 106px;
+    overflow: hidden;
+    
+}
+
+.menu-superior-not{
+	margin-top: 3px;
+	padding-right: 4px;
+	padding-left: 4px;
+    height: 24px;
+    padding-bottom: 2px;
+    overflow: hidden;
+    border-radius: 12%;
+    opacity: 0.5;
+}
+
+.espaco-form{
+	margin-left: 700px;
+}
+
+.menu-superior-foto-perfil{
+
+	margin-top: 25px;
+	margin-left: 10px;
+	margin-right: 5px;
+	height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+.menu-superior-palavra-perfil{
+	margin-top: 10px;
+	color: #FFFFFF;
+}
