@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="02-imc.css">
+	<script type="text/javascript" src="02-imc.js"></script>
+	<title>IMC</title>
+</head>
+<body>
+
+	<div class="container-fluid cabecalho">
+		<div class="titulo">
+			<h1 class="display-3">IMC Online</h1>
+		</div>
+		<div class="imagens">
+			<div>
+				<img src="fita-metrica.jpg">
+			</div>
+			<div>
+				<img src="balanca.jpg">
+			</div>
+		</div>
+	</div>
+
+	<div id="div-campos" class="container fundo-conteudo formulario">
+		<div>
+			<h3 class="display-4"> Calculadora de IMC: </h3>
+		</div>
+		<div class="alert alert-danger" style="display: none" id="alerta1">
+				<span>Informe os dados corretamente!</span>
+		</div>
+		<form>
+			<div id="campos">
+				<div class="form-group">
+					<label for="peso">Digite seu peso:</label>
+					<input type="text" name="peso" id="peso" class="form-control" onkeypress='return verificarNum(event)'>
+				</div>
+				<div class="form-group" style="margin-left: 3%">
+					<label for="altura">Digite sua altura:</label>
+					<input type="altura" name="altura" id="altura" class="form-control" onkeypress='return verificarNum(event)'>
+				</div>
+			</div>
+			<div>
+				<button type="button" class="btn" id="botao-calcular" onclick="calcular()">Calcular:</button>
+			</div>
+		</form>
+	</div>
+
+	<div id="div-resultados" class="container fundo-conteudo resultado" style="display: none">
+		<div>
+			<img id="imagem-imc">
+		</div>
+		<div>
+			<h5 id="valor-imc" class="display-5"></h5>
+
+			<p id="texto-imc" class="display-6" ></p>
+
+			<h6 id="faixa-imc" class="display-6"></h6>
+
+			<button type="button" class="btn" id="botao-voltar"><a href="02-imc.html">Voltar</a></button>
+		</div>
+	</div>
+
+</body>
+</html>

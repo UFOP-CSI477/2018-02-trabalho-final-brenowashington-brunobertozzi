@@ -1,0 +1,80 @@
+#cadastro
+{
+  position:relative;
+  left:37%;
+  top:29%;
+  width:320px;
+  height:270px;
+}
+
+#formulario
+{
+  background-color: #B22609;
+}
+
+#cadastro #formulario
+{
+  position:absolute;
+  display:block;   
+}
+
+fieldset
+{
+  width:400px;
+  height:160px;
+}
+
+
+#formulario #campo label
+{
+  color: white;
+  position:absolute;
+  left:18px;
+  margin-right:5px;
+}
+
+#formulario #radio #normal
+{
+  color: white;
+  position:absolute;
+  left:18px;
+  margin-right:5px;
+  margin-top:5px;
+}
+
+#formulario #radio #selecao
+{
+  position:relative;
+  left:95px;
+  margin-top:5px;
+  width:300px;
+}
+
+
+
+#formulario #campo input
+{ 
+  position:relative;
+  left:95px;
+  margin-top:5px;
+  width:300px;
+}
+
+#radio #selecao{
+  color: white;
+	position:relative;
+	left:180px;
+  margin-top:5px;
+	display: inline;
+}
+
+
+#botao input
+{
+  display: inline;
+  width:100px;
+  position:relative;
+  left:190px;
+  margin-top:5px;
+  margin-right:5px;
+}

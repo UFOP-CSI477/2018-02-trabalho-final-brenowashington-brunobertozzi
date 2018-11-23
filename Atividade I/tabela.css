@@ -1,0 +1,27 @@
+tr:nth-child(even){
+	background-color: #C43416;
+}
+
+table{
+	left:37%;
+  	top:29%;
+  	position: relative;
+  	width:270px;
+}
+
+table,th, td, caption{
+	border:1px solid;
+	border-collapse: collapse;
+}
+
+tr:hover{
+	background: #D80000;
+	cursor: pointer;
+}
+
+caption
+{
+	font-family: tahoma;
+	font-weight: bold;
+	background-color: #C43416
+}
