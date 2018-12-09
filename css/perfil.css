@@ -1,0 +1,136 @@
+.perfil{
+	margin-top: 20px;
+}
+
+.imagem-perfil{
+	width: 100%;
+	border-radius: 50%;
+	margin-bottom: 20px;
+	border: solid white 5px;
+	box-shadow:10px 10px 50px grey; 
+}
+
+.informacoes-perfil{
+	background: white;
+	border-radius: 5px;
+	padding-top: 5px;
+	padding-bottom: 7px;
+	margin-bottom: 15px;
+	box-shadow:10px 10px 50px grey; 
+}
+
+.titulo-informacoes{
+	display: flex;
+	align-items: center;
+}
+
+.titulo-informacoes img{
+	height: 20px;
+	margin-left: 2.5%;
+}
+
+.titulo-informacoes h5{
+	margin-left: 10px;
+	margin-top: 5px;
+	font-size: 16px;
+    line-height: 20px;
+}
+
+.informacoes-pessoais{
+	margin-left: 2.5%;
+	margin-right: 2.5%
+	display: flex;
+	margin-top: 10px;
+}
+
+.informacoes-pessoais img{
+	height: 15px;
+}
+
+.informacoes-pessoais a{
+	font-size: 13px;
+    line-height: 15px;
+    margin-left: 4px;
+}
+
+.informacoes-pessoais{
+	font-size: 13px;
+    line-height: 15px;
+}
+
+.ver-mais{
+	margin-left: 70%;
+	margin-top: 5px;
+	font-size: 13px;
+    line-height: 15px;
+}
+
+.perfil-inicio{
+	margin-bottom:15px;
+}
+
+.perfil-inicio a{
+	text-decoration: none;
+}
+
+.perfil-inicio a span img{
+	height: 25px;
+	width: 25px;
+	border-radius: 50%;
+}
+
+.perfil-inicio a span h3{
+	font-size: 15px;
+    line-height: 25px;
+    margin-left: 4px;
+    text-align: justify;
+    color: black;
+}
+
+.perfil-inicio a span{
+	display: flex;
+	align-items: initial;
+}
+
+.sussurros{
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+}
+
+.sussurros div{
+	margin-top: 5px;
+	display: flex;
+	background-color: rgba(219,171,190,0.6);
+	border-radius: 5px;
+}
+
+.denuncia{
+	background-color: rgba(255,255,255,0);
+	border: none;
+	color: blue;
+	justify-content: space-between;
+}
+
+.denuncia:hover{
+	cursor: pointer;
+}
+
+.denuncia:focus{
+	border:none;
+}
+
+.sussurros img{
+	margin-top: 5px;
+	width: 15px;
+	height: 15px;
+	margin-left: 10px;
+}
+
+.sussurros p{
+	margin-top: 5px;
+	margin-left: 5px;
+	font-size: 15px;
+	line-height: 15px;
+	margin-right: 10px;
+	text-align: justify;
+}
