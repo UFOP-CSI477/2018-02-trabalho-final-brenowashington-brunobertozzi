@@ -1,6 +1,7 @@
 <?php
 
 $pedidos = $connection->query("SELECT * FROM solicitacao_amizade Where id_convidado = ".$_SESSION['user']);
+$sussurros = $connection->query("SELECT * FROM sussurros Where id_dest = ".$_SESSION['user']);
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +32,7 @@ $pedidos = $connection->query("SELECT * FROM solicitacao_amizade Where id_convid
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <a href="">
+      <a href="../inicio.php">
        <span> 
         <img src="../imagens_barra/logotipo.png" class="logo">
       </span>

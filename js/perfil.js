@@ -10,9 +10,9 @@ $(document).ready(function(){
 		$("#publicar-msg").hide();
 	})
 
-	$("#publicar-msg").on('submit',function(){
-		if(!$("#texto-post").val()){
-			$("#texto-post").addClass("is-invalid");
+	$("#publicar-sussurro").on('submit',function(){
+		if(!$("#texto_sussurro").val()){
+			$("#texto_sussurro").addClass("is-invalid");
 			return false;
 		}
 	})
@@ -31,6 +31,78 @@ $(document).ready(function(){
 		}
 	})
 
+	$("#editar").on('submit',function(){
+		var valido = true;
+		if(!$("#nome").val()){
+			$("#nome").addClass("is-invalid");
+			valido = false;
+		}
+		else{
+			$("#nome").addClass("is-valid");
+		}
+		if(!$("#senha_antiga").val() || $("#senha_antiga").val().length<6){
+			$("#senha_antiga").addClass("is-invalid");
+			valido = false;
+		}
+		else{
+			$("#senha_antiga").addClass("is-valid");
+		}
+
+		if(!$("#datanasc").val()){
+			$("#datanasc").addClass("is-invalid");
+			valido = false;
+		}
+		var data = $("#datanasc").val();
+		data = data.replace(/\//g, "-"); // substitui eventuais barras (ex. IE) "/" por hífen "-"
+	   var data_array = data.split("-"); // quebra a data em array
+	   
+	   // para o IE onde será inserido no formato dd/MM/yyyy
+	   if(data_array[0].length != 4){
+	      data = data_array[2]+"-"+data_array[1]+"-"+data_array[0]; // remonto a data no formato yyyy/MM/dd
+	  }
+
+	   // comparo as datas e calculo a idade
+	   var hoje = new Date();
+	   var nasc  = new Date(data);
+	   var idade = hoje.getFullYear() - nasc.getFullYear();
+
+	   if(nasc.getFullYear() > hoje.getFullYear()){
+	   	window.alert("Digite um ano válido!");
+	   	$("#datanasc").addClass("is-invalid");
+	   	valido = false;
+	   }
+	   var m = hoje.getMonth() - nasc.getMonth();
+	   if (m < 0 || (m === 0 && hoje.getDate() < nasc.getDate())) idade--;
+	   
+	   if(idade<18){
+	   	window.alert("Pessoas menores de 18 não podem se cadastrar.");
+	   	$("#datanasc").addClass("is-invalid");
+	   	valido = false;
+	   }
+	   if (idade>120){
+	   	window.alert("Digite uma idade válida");
+	   	$("#datanasc").addClass("is-invalid");
+	   	valido = false;
+	   }
+
+	   var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		if(!filter.test($("#email").val())){
+			$("#email").addClass("is-invalid");
+			valido = false;
+		}
+		else{
+			$("#email").addClass("is-valid");
+		}
+
+		if($("#senha_nova").val() && $("#senha_nova").val().length<6){
+			$("#senha_nova").addClass("is-invalid");
+			valido = false;
+		}
+		else{
+			$("#senha_antiga").addClass("is-valid");
+		}
+		return valido;
+	})
 
 
 });
@@ -66,4 +138,12 @@ function sussurrar(cod_texto,id){
 			window.alert("Sussurro enviado!");
 		}
 	});*/
+}
+
+function selecionar_imagem(foto){
+	if ($("#foto_selecionada").val()!=-1) {
+		$("#foto_"+$("#foto_selecionada").val()).removeClass("selecionada");
+	}
+		$("#foto_"+foto).addClass("selecionada");
+		$("#foto_selecionada").val(foto);
 }

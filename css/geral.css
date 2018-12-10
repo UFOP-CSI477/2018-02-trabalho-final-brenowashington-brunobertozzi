@@ -237,6 +237,7 @@
 	margin-top: 10px;
 	margin-left: 2.5%;
 	margin-right: 2.5%;
+	justify-content: center;
 }
 
 .acoes-sussurro button{
@@ -262,4 +263,21 @@
 	height: 25px;
 	margin-right: 10px;
 	overflow: hidden;
+}
+
+.botao-amizade{
+	background-color: rgba(162,103,105,0.35);
+}
+
+.fotos-enviadas{
+	max-height: 600px;
+}
+
+.fotos-enviadas div img:hover{
+	cursor: pointer;
+	border: solid 3px #33DDFF;
+}
+
+.selecionada{
+	border: solid 3px #40D41C !important;
 }

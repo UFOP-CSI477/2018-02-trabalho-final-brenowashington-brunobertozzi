@@ -51,18 +51,13 @@ if(isset($_SESSION["erro_img"])){
 		<div class="col-md-4">
 			<div class="container perfil-inicio">
 				<div class="container">
-					<a href="">
-						<span>
-							<?php
-							if ($user['foto_perfil']!=NULL) {
-								$busca_foto = $connection->query("SELECT * FROM fotos WHERE cod_img =".$user['foto_perfil']);
-								$foto = $busca_foto->fetch();
-								echo "<img class='imagem-perfil' src='".$foto["arquivo"]."'>";
-							}
-							?>
-							
-						</span>
-					</a>
+					<?php
+					if ($user['foto_perfil']!=NULL) {
+						$busca_foto = $connection->query("SELECT * FROM fotos WHERE cod_img =".$user['foto_perfil']);
+						$foto = $busca_foto->fetch();
+						echo "<img class='imagem-perfil' src='".$foto["arquivo"]."'>";
+					}
+					?>
 					<h3 class="nome-perfil"><?php echo $user['nome']; ?></h3>
 				</div>
 			</div>
@@ -72,23 +67,23 @@ if(isset($_SESSION["erro_img"])){
 				if(isset($amigos)){
 					echo "<form action='desfazer_amizade.php' method='post'>
 					<input type='hidden' name='amigo' value='".$user["id"]."'>
-					<button class='btn btn-lg btn-block'>Desfazer amizade!</button>
+					<button class='btn btn-lg btn-block botao-amizade'>Desfazer amizade!</button>
 					</form>";
 				}else if (isset($solicitado)) {
 					echo "<form action='desfazer_solicitacao.php' method='post'>
 					<input type='hidden' name='amigo' value='".$user["id"]."'>
-					<button class='btn btn-lg btn-block'>Desfazer solicitação!</button>
+					<button class='btn btn-lg btn-block botao-amizade'>Desfazer solicitação!</button>
 					</form>";
 				}
 				else{
 					echo "<form action='amizade.php' method='post'>
 					<input type='hidden' name='amigo' value='".$user["id"]."'>
-					<button class='btn btn-lg btn-block'>Adicionar amigo!</button>
+					<button class='btn btn-lg btn-block botao-amizade'>Adicionar amigo!</button>
 					</form>";
 				}
 			}
 			else{
-				echo "<button class='btn btn-lg btn-block'>Editar perfil</button>";
+				echo "<a class='btn btn-lg btn-block' href='editar_perfil.php'>Editar perfil</a>";
 			}
 			?>
 
@@ -122,12 +117,12 @@ if(isset($_SESSION["erro_img"])){
 				}
 				echo "</div>";
 			}else{
-				echo "<div class='informacoes-perfil'>
-				<form class='form-group acoes-sussurro' id='publicar-msg' method='post' action='sussurrar_perfil.php'>
+				echo "<div class='informacoes-perfil justify-content-center'>
+				<form class='form-group acoes-sussurro justify-content-center' id='publicar-sussurro' method='post' action='sussurrar_perfil.php'>
 				<textarea class='form-control' id='texto_sussurro' name='texto_sussurro' placeholder='Sussure sua mensagem!'></textarea>
 				<input type='hidden' name='sussurrado' value='".$user["id"]."'>
-				<button type='submit' name='sussurrar_post'>
-				<span>
+				<button type='submit' name='sussurrar_pessoa' class='justify-content-center'>
+				<spa>
 				<img src='../imagens_gerais/Sussurrar.png'>
 				<h6>Sussurrar</h6>
 				</span>

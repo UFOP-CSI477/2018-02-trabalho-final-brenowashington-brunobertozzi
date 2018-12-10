@@ -7,8 +7,9 @@ include("../conexao.php");
 $consulta = $connection->query("SELECT * FROM usuarios Where id = ".$_SESSION['user']);
 $user = $consulta->fetch();
 
-$posts = $connection->query("SELECT * FROM post Where id = ".$_SESSION['user']." OR id = (SELECT id_2 FROM amizades WHERE id_1 =".$_SESSION['user'].")");
+$posts = $connection->query("SELECT * FROM post Where id = ".$_SESSION['user']." OR id = (SELECT id_2 FROM amizades WHERE id_1 =".$_SESSION['user'].") ORDER BY created_at DESC");
 
+$sussurros = $connection->query("SELECT * FROM sussurros Where id_dest = ".$_SESSION['user']);
 ?>
 
 <?php
@@ -38,22 +39,19 @@ if(isset($_SESSION["erro_img"])){
 				</div>
 
 				<div class="sussurros">
-					<div>
-						<img src="../imagens_gerais/Sigilo.png">
-						<span>
-							<p>Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro </p>
-							<button class="denuncia" onclick="denunciar('#sussurro-1')">Denunciar</button>
-							<input type="hidden" name="sussurro-1" id="sussurro-1" value="1">
-						</span>
-					</div>
 
-					<div>
-						<img src="../imagens_gerais/Sigilo.png">
+					<?php
+						while ($sussurro = $sussurros->fetch()) {
+							echo "<div>
+						<img src='../imagens_gerais/Sigilo.png'>
 						<span>
-							<p>Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro </p>
-							<button class="denuncia">Denunciar</button>
+							<p>".$sussurro["texto"]."</p>
+							<button class='denuncia' onclick='denunciar('#sussurro-1')'>Denunciar</button>
+							<input type='hidden' name='sussurro-".$sussurro["cod_sussurro"]."' id='sussurro-".$sussurro["cod_sussurro"]."' value='".$sussurro["cod_sussurro"]."'>
 						</span>
-					</div>
+					</div>";
+						}
+					?>
 
 				</div>
 

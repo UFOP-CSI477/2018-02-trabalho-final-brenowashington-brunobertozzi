@@ -23,6 +23,6 @@ try{
 	}catch(PDOException $e) {
  		echo 'Error: ' . $e->getMessage();
  	}
- 	/*$_SESSION['amigo'] = $sussurrado;
-  header('Location: perfil.php');*/
+ 	$_SESSION['amigo'] = $sussurrado;
+  header('Location: perfil.php');
 ?>

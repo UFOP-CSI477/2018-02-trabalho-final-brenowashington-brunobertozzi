@@ -12,6 +12,7 @@ if ($consulta->rowCount() == 0) {
 
 $c_usuario = $connection->query("SELECT * FROM usuarios Where id = ".$_SESSION['user']);
 $user = $c_usuario->fetch();
+
 include("menu.php");
 if(isset($_SESSION["erro_img"])){
 	echo "<script>alert('".$_SESSION["erro_img"]."');</script>";
@@ -25,9 +26,7 @@ if(isset($_SESSION["erro_img"])){
 	<div class="row perfil">
 		<div class="col-md-4">
 			<div class="container perfil-inicio">
-				<a href="" >
-					<span>
-						<img src="../imagens_perfil/perfil.jpg">
+				<img src="../imagens_perfil/perfil.jpg">
 						<h3><?php echo $user['nome']; ?></h3>
 					</span>
 				</a>
@@ -40,23 +39,18 @@ if(isset($_SESSION["erro_img"])){
 				</div>
 
 				<div class="sussurros">
-					<div>
-						<img src="../imagens_gerais/Sigilo.png">
+					<?php
+						while ($sussurro = $sussurros->fetch()) {
+							echo "<div>
+						<img src='../imagens_gerais/Sigilo.png'>
 						<span>
-							<p>Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro </p>
-							<button class="denuncia" onclick="denunciar('#sussurro-1')">Denunciar</button>
-							<input type="hidden" name="sussurro-1" id="sussurro-1" value="1">
+							<p>".$sussurro["texto"]."</p>
+							<button class='denuncia' onclick='denunciar('#sussurro-1')'>Denunciar</button>
+							<input type='hidden' name='sussurro-".$sussurro["cod_sussurro"]."' id='sussurro-".$sussurro["cod_sussurro"]."' value='".$sussurro["cod_sussurro"]."'>
 						</span>
-					</div>
-
-					<div>
-						<img src="../imagens_gerais/Sigilo.png">
-						<span>
-							<p>Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro </p>
-							<button class="denuncia">Denunciar</button>
-						</span>
-					</div>
-
+					</div>";
+						}
+					?>
 				</div>
 
 			</div>

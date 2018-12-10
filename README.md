@@ -16,12 +16,12 @@ O objetivo deste documento é apresentar uma proposta para o trabalho a ser dese
 <!-- Descrever e limitar o escopo da aplicação. -->
 ### 2. Escopo
 
-  Este projeto terá as seguintes funcionalidades: o cadastro de usuários; a possibilidade de relacionamento dos usuários por meio da associação chamada "Amizade"; possibilidade de enviar mensagens e comentários de maneira anônima.
+  Este projeto terá as seguintes funcionalidades: o cadastro e gestão de usuários; a possibilidade de relacionamento dos usuários por meio da associação chamada "Amizade"; possibilidade de enviar mensagens e comentários de maneira anônima, fazer posts e capacidade de denunciar comentários danosos.
 
 <!-- Apresentar restrições de funcionalidades e de escopo. -->
 ### 3. Restrições
 
-  Neste trabalho não serão consideradas as funcionalidades de criação de grupos, denuncias de mensagens ofensivas ou danosas.
+  Neste trabalho não serão consideradas as funcionalidades de criação de grupos, além de informações mais detalhadas dos usuários.
 
 <!-- Construir alguns protótipos para a aplicação, disponibilizá-los no Github e descrever o que foi considerado. //-->
 ### 4. Protótipo
