@@ -1,3 +1,8 @@
+<?php
+
+$pedidos = $connection->query("SELECT * FROM solicitacao_amizade Where id_convidado = ".$_SESSION['user']);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,14 +14,15 @@
   <link rel="stylesheet" type="text/css" href="../css/geral.css">
   <link rel="stylesheet" type="text/css" href="../css/perfil.css">
 
-  <script src="../js/jquery-3.3.1.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="../js/perfil.js"></script>
 
 
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #582C4D;">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #582C4D;">
 
     <div class="container">
 
@@ -31,19 +37,19 @@
       </span>
     </a>   
 
-    <form class="form-inline ">
-     <input class="form-control mr-sm-1" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+    <form class="form-inline" id="pesquisar" method="get" action="resultado_pesquisa">
+     <input name="campo_pesquisa" id="campo_pesquisa" class="form-control mr-sm-1" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
      <button class="btn btn-outline-light" type="submit">Pesquisar</button>
    </form> 
 
-  </div>
+ </div>
 
-  <div class="collapse navbar-collapse justify-content-center" id="conteudoNavbarSuportado">
+ <div class="collapse navbar-collapse justify-content-center" id="conteudoNavbarSuportado">
 
    <ul class="navbar-nav">
 
      <li class="nav-item">
-      <a href="" class="nav-link text-light"> Perfil</a>
+      <a href="perfil.php" class="nav-link text-light">Perfil</a>
     </li>       
 
     <li class="nav-item">
@@ -57,12 +63,11 @@
      </span>
    </a>
 
-   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <a class="dropdown-item" href="#">Aviso</a>
-    <a class="dropdown-item" href="#">Aviso</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">Mais aviso</a>
-  </div>
+   <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <?php
+    
+    ?>
+  </div> -->
 </li>
 
 <li class="nav-item">

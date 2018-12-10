@@ -111,14 +111,14 @@ if(isset($_SESSION["erro_img"])){
 					echo "<div class='post'>
 					<div class='informacoes-post'>";
 					if ($dono['foto_perfil']!=NULL) {
-						$busca_foto = $connection->query("SELECT * FROM fotos WHERE cod_img =".$donot['foto_perfil']);
+						$busca_foto = $connection->query("SELECT * FROM fotos WHERE cod_img =".$dono['foto_perfil']);
 						$foto = $busca_foto->fetch();
 						echo "<img src=".$foto["arquivo"].">";
 					}
 					
 					echo "<h6>".$dono["nome"]."</h6>
-					<p>06/11/2018 às 15:38</p>
-					<form method='get'>
+					<p>".$post["created_at"]."</p>
+					<form method='get' action='perfil.php'>
 					<input type='hidden' name='usuario' value='".$dono["id"]."'>
 					<button type='submit' name='perfil-user' class='denuncia'>Ver perfil</button>
 					</input>
@@ -131,12 +131,12 @@ if(isset($_SESSION["erro_img"])){
 					if ($post['cod_img']!=NULL) {
 						$busca_foto = $connection->query("SELECT * FROM fotos WHERE cod_img =".$post['cod_img']);
 						$foto = $busca_foto->fetch();
-						echo "<img src=".$foto['arquivo'].">";
+						echo "<img src='".$foto['arquivo']."'>";
 					}
 
 					echo "</div>
 
-					<div class='caixa-comentarios'>
+					<div class='caixa-comentarios' id='espaco_comentarios".$post['cod_post']."'>
 					<div class='comentario'>
 					<img src='../imagens_gerais/Sigilo.png'>
 					<p>Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro </p>
@@ -148,12 +148,11 @@ if(isset($_SESSION["erro_img"])){
 					</div>
 					</div>
 					<div class='acoes-comentario justify-content-center'>
-					<form class='form-group' id='publicar-msg' method='post' action='texto_post.php' class='conteudo'>
+					<form class='form-group' id='publicar-msg' method='post' class='conteudo' action='#' onsubmit='sussurrar(\"#texto_".$post['cod_post']."\",\"#".$post['cod_post']."\")' >
 					<div class='form-group'>
-					<textarea class='form-control' id='texto-post' name='texto-post' placeholder='Sussurre neste post'></textarea>
+					<textarea class='form-control' id='texto_".$post['cod_post']."' name='texto-post' placeholder='Sussurre neste post'></textarea>
 					</div>
-					<input type='hidden' name='post' value='".$post['cod_post']."'>
-					
+					<input type='hidden' id='".$post['cod_post']."' name='post' value='".$post['cod_post']."'>
 					<button type='submit' name='sussurrar_post'>
 					<span>
 					<img src='../imagens_gerais/Sussurrar.png'>

@@ -24,10 +24,46 @@ $(document).ready(function(){
 		}
 	})
 
+	$("#pesquisar").on('submit',function(){
+		if(!$("#campo_pesquisa").val()){
+			$("#campo_pesquisa").addClass("is-invalid");
+			return false;
+		}
+	})
+
 
 
 });
 
 function denunciar(cod_sussurro){
 	console.log($(cod_sussurro).val());
+}
+
+function sussurrar(cod_texto,id){
+	if (!$(cod_texto).val()){
+		$(cod_texto).addClass("is-invalid");
+		return false;
+	}
+	if (!$(id).val()) {
+		$(cod_texto).addClass("is-invalid");
+		return false;
+	}
+
+	/*$.ajax({
+		type: 'post',
+		url: 'sussurrar_post.php',
+		data:{
+			texto: $(cod_texto).val(),
+			id_post: $(id).val()
+		},
+		cache:false,
+		contentType:false,
+		processData:false,
+		error: function(){
+			window.alert("O sussuro não pode ser enviado");
+		},
+		success: function(){
+			window.alert("Sussurro enviado!");
+		}
+	});*/
 }

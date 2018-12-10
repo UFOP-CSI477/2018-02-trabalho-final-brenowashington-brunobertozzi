@@ -232,3 +232,34 @@
 	width: 100%;
 	height: 100%;
 }
+
+.acoes-sussurro{
+	margin-top: 10px;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+}
+
+.acoes-sussurro button{
+	background-color: transparent;
+	border:0;
+	margin: 0 auto;
+	padding-left: 60px;
+	padding-right: 60px;
+}
+
+.acoes-sussurro button:hover{
+	cursor: pointer;
+	background: #D6D6D6;
+	border-radius: 10px;
+}
+
+.acoes-sussurro button span{
+	display: flex;
+	align-items: center;
+}
+
+.acoes-sussurro button img{
+	height: 25px;
+	margin-right: 10px;
+	overflow: hidden;
+}
