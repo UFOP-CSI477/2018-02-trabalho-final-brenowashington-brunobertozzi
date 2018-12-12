@@ -27,7 +27,7 @@
 
 	<nav class="navbar navbar-expand-lg navbar-dark  fixed-top" id="mainNav" style="background-color: #582C4D;">
 
-     	<a href="#">
+     	<a href="../inicio.php">
        		<span> 
         		<img src="imagens/logotipo.png" class="logo">
       		</span>

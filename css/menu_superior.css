@@ -145,12 +145,10 @@
 
 .menu-superior-not{
 	margin-top: 3px;
-	padding-right: 4px;
-	padding-left: 4px;
     height: 24px;
     padding-bottom: 2px;
     overflow: hidden;
-    border-radius: 12%;
+    margin-left: 20px;
     opacity: 0.5;
 }
 

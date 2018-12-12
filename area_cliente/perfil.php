@@ -104,18 +104,24 @@ if(isset($_SESSION["entrou"])){
 						$foto = $busca_foto->fetch();
 						echo "<img src=".$foto["arquivo"].">";
 					}
-					echo "<h6>".$solicitante["nome"]."</h6>
+					echo "<h6>".$solicitante["nome"]."</h6></div>
+					<div class='d-flex' style='margin-left:5px;'>
 					<form method='post' action='aceitar.php'>
+					<div class='form-group'>
 					<input type='hidden' name='solicitante' value='".$solicitante["id"]."'>
 					<button type='submit' name='perfil-user' class='btn btn-light'>Aceitar!</button>
 					</input>
+					</div>
 					</form>
 					<form method='post' action='rejeitar.php'>
+					<div class='form-group'>
 					<input type='hidden' name='solicitante' value='".$solicitante["id"]."'>
 					<button type='submit' name='perfil-user' class='btn btn-light'>Rejeitar!</button>
 					</input>
+					</div>
 					</form>
-					</div>";
+					</div>
+					";
 				}
 				echo "</div>";
 			}else{

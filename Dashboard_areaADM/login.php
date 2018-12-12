@@ -3,12 +3,9 @@
 	include("conexao.php");
 	$email = $_POST['emaillogin'];
 	$senha = $_POST['senhalogin'];
-	$consulta = $connection->query("SELECT * FROM usuarios Where e_mail = '$email' AND senha = '$senha' AND type = '$tipo' ");
+	$consulta = $connection->query("SELECT * FROM usuarios Where e_mail = '$email' AND senha = '$senha' AND type =  1");
 	if($user = $consulta->fetch()){
 		$_SESSION['user'] = $user["id"];
-		if(isset($_SESSION['falha_login'])){
-			unset($_SESSION['falha_login']);
-		}
 		header('Location: view_index.php');
 	}
 	else{

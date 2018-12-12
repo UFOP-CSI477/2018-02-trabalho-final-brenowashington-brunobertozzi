@@ -22,7 +22,7 @@
         			<span class="navbar-toggler-icon"></span>
       			</button>
 
-     		 	<a href="">
+     		 	<a href="../inicio.php">
        				<span> 
         				<img src="imagens/logotipo.png" class="logo">
       				</span>
