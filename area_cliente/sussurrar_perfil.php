@@ -19,7 +19,6 @@ try{
     		':id_remetente' => $_SESSION['user'],
         ':id_dest' => $sussurrado
   		));
-    echo "Fez a inserção";
 	}catch(PDOException $e) {
  		echo 'Error: ' . $e->getMessage();
  	}

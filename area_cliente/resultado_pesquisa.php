@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['user'])) {
+if (!isset($_SESSION['user']) || !isset($_GET["campo_pesquisa"])) {
 	header('Location: ../inicio.php');
 }
 include("../conexao.php");
@@ -49,8 +49,10 @@ if(isset($_SESSION["erro_img"])){
 						<img src='../imagens_gerais/Sigilo.png'>
 						<span>
 							<p>".$sussurro["texto"]."</p>
-							<button class='denuncia' onclick='denunciar('#sussurro-1')'>Denunciar</button>
-							<input type='hidden' name='sussurro-".$sussurro["cod_sussurro"]."' id='sussurro-".$sussurro["cod_sussurro"]."' value='".$sussurro["cod_sussurro"]."'>
+							<form method='post' action='denunciar.php'>
+							<button type='submit' class='denuncia'>Denunciar</button>
+							<input type='hidden' name='sussurro-denunciado' value='".$sussurro["cod_sussurro"]."'>
+							</form>
 						</span>
 					</div>";
 						}

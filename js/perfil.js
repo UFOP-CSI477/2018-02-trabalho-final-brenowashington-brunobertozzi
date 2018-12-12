@@ -86,22 +86,22 @@ $(document).ready(function(){
 	   }
 
 	   var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-		if(!filter.test($("#email").val())){
-			$("#email").addClass("is-invalid");
-			valido = false;
-		}
-		else{
-			$("#email").addClass("is-valid");
-		}
+	   if(!filter.test($("#email").val())){
+	   	$("#email").addClass("is-invalid");
+	   	valido = false;
+	   }
+	   else{
+	   	$("#email").addClass("is-valid");
+	   }
 
-		if($("#senha_nova").val() && $("#senha_nova").val().length<6){
-			$("#senha_nova").addClass("is-invalid");
-			valido = false;
-		}
-		else{
-			$("#senha_antiga").addClass("is-valid");
-		}
-		return valido;
+	   if($("#senha_nova").val() && $("#senha_nova").val().length<6){
+	   	$("#senha_nova").addClass("is-invalid");
+	   	valido = false;
+	   }
+	   else{
+	   	$("#senha_antiga").addClass("is-valid");
+	   }
+	   return valido;
 	})
 
 
@@ -121,29 +121,30 @@ function sussurrar(cod_texto,id){
 		return false;
 	}
 
-	/*$.ajax({
-		type: 'post',
-		url: 'sussurrar_post.php',
+	$.ajax({
+		type: 'POST',
+		url:'sussurrar_post.php',
 		data:{
 			texto: $(cod_texto).val(),
 			id_post: $(id).val()
 		},
-		cache:false,
-		contentType:false,
-		processData:false,
+		dataType: "html",
 		error: function(){
-			window.alert("O sussuro não pode ser enviado");
+			$(cod_texto).addClass("is-invalid");
 		},
 		success: function(){
-			window.alert("Sussurro enviado!");
+
+			$(cod_texto).removeClass("is-invalid");
+			$("#espaco_comentarios"+$(id).val()).append('<div class="fundo-comentario"><div class="comentario"><img src="../imagens_gerais/Sigilo.png"><p>'+$(cod_texto).val()+'</p></div><div class="informacoes-comentario"><p>06/11/2018 às 16:15</p></div></div></div>');
+			$(cod_texto).val(null);
 		}
-	});*/
+	});
 }
 
 function selecionar_imagem(foto){
 	if ($("#foto_selecionada").val()!=-1) {
 		$("#foto_"+$("#foto_selecionada").val()).removeClass("selecionada");
 	}
-		$("#foto_"+foto).addClass("selecionada");
-		$("#foto_selecionada").val(foto);
+	$("#foto_"+foto).addClass("selecionada");
+	$("#foto_selecionada").val(foto);
 }

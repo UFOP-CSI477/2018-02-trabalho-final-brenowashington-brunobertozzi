@@ -8,8 +8,6 @@ $consulta = $connection->query("SELECT * FROM usuarios Where id = ".$_SESSION['u
 $user = $consulta->fetch();
 
 $posts = $connection->query("SELECT * FROM post Where id = ".$_SESSION['user']." OR id = (SELECT id_2 FROM amizades WHERE id_1 =".$_SESSION['user'].") ORDER BY created_at DESC");
-
-$sussurros = $connection->query("SELECT * FROM sussurros Where id_dest = ".$_SESSION['user']." AND valido = 0");
 ?>
 
 <?php
@@ -122,7 +120,7 @@ if(isset($_SESSION["erro_img"])){
 						$foto = $busca_foto->fetch();
 						echo "<img src=".$foto["arquivo"].">";
 					}
-					
+
 					echo "<h6>".$dono["nome"]."</h6>
 					<p>".$post["created_at"]."</p>
 					<form method='get' action='perfil.php'>
@@ -131,7 +129,7 @@ if(isset($_SESSION["erro_img"])){
 					</input>
 					</form>
 					</div>
-					
+
 
 					<div class='conteudo'>
 					<p>".$post['texto']." </p>";
@@ -141,34 +139,49 @@ if(isset($_SESSION["erro_img"])){
 						echo "<img src='".$foto['arquivo']."'>";
 					}
 
+
 					echo "</div>
 
-					<div class='caixa-comentarios' id='espaco_comentarios".$post['cod_post']."'>
+					<div class='caixa-comentarios' id='espaco_comentarios".$post['cod_post']."'>";
+
+					$busca_comentarios = $connection->query("SELECT * FROM sussurros WHERE id_post =".$post['cod_post']." AND valido = 0 ORDER BY created_at DESC");
+
+					while ($comentario = $busca_comentarios->fetch()) {
+						echo "<div class='fundo-comentario'>
 					<div class='comentario'>
 					<img src='../imagens_gerais/Sigilo.png'>
-					<p>Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro </p>
+					<p>".$comentario["texto"]."</p>
 
 					</div>
 					<div class='informacoes-comentario'>
-					<p>06/11/2018 às 16:15</p>
-					<button class='denuncia'>Denunciar</button>	
+					<p>".$comentario["created_at"]."5</p>";
+
+					if ($comentario["id_remetente"]!=$_SESSION["user"]) {
+						echo "<form method='post' action='denunciar.php'>
+							<button type='submit' class='denuncia'>Denunciar</button>
+							<input type='hidden' name='sussurro-denunciado' value='".$comentario["cod_sussurro"]."'>";
+					}
+					echo "</div>
 					</div>
-					</div>
-					<div class='acoes-comentario justify-content-center'>
-					<form class='form-group' id='publicar-msg' method='post' class='conteudo' action='#' onsubmit='sussurrar(\"#texto_".$post['cod_post']."\",\"#".$post['cod_post']."\")' >
+					";
+					}
+
+					echo "</div><div class='acoes-comentario justify-content-center'>
+					<div>
 					<div class='form-group'>
 					<textarea class='form-control' id='texto_".$post['cod_post']."' name='texto-post' placeholder='Sussurre neste post'></textarea>
 					</div>
 					<input type='hidden' id='".$post['cod_post']."' name='post' value='".$post['cod_post']."'>
-					<button type='submit' name='sussurrar_post'>
+					<button name='sussurrar_post' onclick='sussurrar(\"#texto_".$post['cod_post']."\",\"#".$post['cod_post']."\")'>
 					<span>
 					<img src='../imagens_gerais/Sussurrar.png'>
 					<h6>Sussurrar</h6>
 					</span>
-					</button>	
+					</button>
+					</div>	
 					</div>
 
-					
+
 					</form>
 					</div>
 

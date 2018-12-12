@@ -35,7 +35,7 @@ $consulta = $connection->query("SELECT * FROM solicitacao_amizade Where id_convi
 if ($consulta->rowCount()>0) {
 	$solicitado = true;
 }
-$posts = $connection->query("SELECT * FROM post Where id = ".$amigo);
+$posts = $connection->query("SELECT * FROM post Where id = ".$amigo." ORDER BY created_at DESC");
 
 ?>
 <?php
@@ -43,6 +43,10 @@ include("menu.php");
 if(isset($_SESSION["erro_img"])){
 	echo "<script>alert('".$_SESSION["erro_img"]."');</script>";
 	unset($_SESSION["erro_img"]);
+}
+if(isset($_SESSION["entrou"])){
+	echo "<script>alert('".$_SESSION["entrou"]."');</script>";
+	unset($_SESSION["entrou"]);
 }
 ?>
 
@@ -94,8 +98,7 @@ if(isset($_SESSION["erro_img"])){
 				while ($pedido = $pedidos->fetch()) {
 					$busca = $connection->query("SELECT * FROM usuarios Where id = ".$pedido["id_pedinte"]);
 					$solicitante = $busca->fetch();
-					echo "<div class='dropdown-item'>
-					<div class='informacoes-post'>";
+					echo "<div class='informacoes-post'>";
 					if ($solicitante['foto_perfil']!=NULL) {
 						$busca_foto = $connection->query("SELECT * FROM fotos WHERE cod_img =".$solicitante['foto_perfil']);
 						$foto = $busca_foto->fetch();
@@ -112,7 +115,6 @@ if(isset($_SESSION["erro_img"])){
 					<button type='submit' name='perfil-user' class='btn btn-light'>Rejeitar!</button>
 					</input>
 					</form>
-					</div>
 					</div>";
 				}
 				echo "</div>";
@@ -170,31 +172,44 @@ if(isset($_SESSION["erro_img"])){
 						echo "<img src='".$foto['arquivo']."'>";
 					}
 
+
 					echo "</div>
 
-					<div class='caixa-comentarios' id='espaco_comentarios".$post['cod_post']."'>
+					<div class='caixa-comentarios' id='espaco_comentarios".$post['cod_post']."'>";
+
+					$busca_comentarios = $connection->query("SELECT * FROM sussurros WHERE id_post =".$post['cod_post']." AND valido = 0 ORDER BY created_at DESC");
+
+					while ($comentario = $busca_comentarios->fetch()) {
+						echo "<div class='fundo-comentario'>
 					<div class='comentario'>
 					<img src='../imagens_gerais/Sigilo.png'>
-					<p>Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro Sussuro </p>
+					<p>".$comentario["texto"]."</p>
 
 					</div>
 					<div class='informacoes-comentario'>
-					<p>06/11/2018 às 16:15</p>
-					<button class='denuncia'>Denunciar</button>	
+					<p>".$comentario["created_at"]."5</p>";
+
+					if ($comentario["id_remetente"]!=$_SESSION["user"]) {
+						echo "<button class='denuncia'>Denunciar</button>";
+					}
+					echo "</div>
 					</div>
-					</div>
-					<div class='acoes-comentario justify-content-center'>
-					<form class='form-group' id='publicar-msg' method='post' class='conteudo' action='#' onsubmit='sussurrar(\"#texto_".$post['cod_post']."\",\"#".$post['cod_post']."\")' >
+					";
+					}
+
+					echo "</div><div class='acoes-comentario justify-content-center'>
+					<div>
 					<div class='form-group'>
 					<textarea class='form-control' id='texto_".$post['cod_post']."' name='texto-post' placeholder='Sussurre neste post'></textarea>
 					</div>
 					<input type='hidden' id='".$post['cod_post']."' name='post' value='".$post['cod_post']."'>
-					<button type='submit' name='sussurrar_post'>
+					<button name='sussurrar_post' onclick='sussurrar(\"#texto_".$post['cod_post']."\",\"#".$post['cod_post']."\")'>
 					<span>
 					<img src='../imagens_gerais/Sussurrar.png'>
 					<h6>Sussurrar</h6>
 					</span>
-					</button>	
+					</button>
+					</div>	
 					</div>
 
 
