@@ -20,16 +20,20 @@ if(isset($_SESSION["erro_img"])){
 }
 ?>
 
-
-
 <div class="container">
 	<div class="row perfil">
 		<div class="col-md-4">
 			<div class="container perfil-inicio">
-				<img src="../imagens_perfil/perfil.jpg">
-						<h3><?php echo $user['nome']; ?></h3>
-					</span>
-				</a>
+				<div class="container">
+					<?php
+					if ($user['foto_perfil']!=NULL) {
+						$busca_foto = $connection->query("SELECT * FROM fotos WHERE cod_img =".$user['foto_perfil']);
+						$foto = $busca_foto->fetch();
+						echo "<img class='imagem-perfil' src='".$foto["arquivo"]."'>";
+					}
+					?>
+					<h3 class="nome-perfil"><?php echo $user['nome']; ?></h3>
+				</div>
 			</div>
 
 			<div class="informacoes-perfil">

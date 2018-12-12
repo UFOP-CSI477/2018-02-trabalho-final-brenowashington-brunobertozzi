@@ -1,7 +1,7 @@
 <?php
 
 $pedidos = $connection->query("SELECT * FROM solicitacao_amizade Where id_convidado = ".$_SESSION['user']);
-$sussurros = $connection->query("SELECT * FROM sussurros Where id_dest = ".$_SESSION['user']);
+$sussurros = $connection->query("SELECT * FROM sussurros Where id_dest = ".$_SESSION['user']." AND valido = 0");
 ?>
 
 <!DOCTYPE html>
@@ -57,19 +57,19 @@ $sussurros = $connection->query("SELECT * FROM sussurros Where id_dest = ".$_SES
      <a class="nav-link text-light" href="feed.php">Inicio</a>
    </li>
 
-   <li class="nav-item dropdown">
+ <!--   <li class="nav-item dropdown">
      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <span>
        <img src="../imagens_barra/Not_amizades.png" class="menu-superior-not">
      </span>
    </a>
 
-   <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
     <?php
     
     ?>
-  </div> -->
-</li>
+  </div>
+  </li> -->
 
 <li class="nav-item">
   <a class="nav-link disabled text-light" href="../sair.php">Sair</a>

@@ -9,7 +9,7 @@ $user = $consulta->fetch();
 
 $posts = $connection->query("SELECT * FROM post Where id = ".$_SESSION['user']." OR id = (SELECT id_2 FROM amizades WHERE id_1 =".$_SESSION['user'].") ORDER BY created_at DESC");
 
-$sussurros = $connection->query("SELECT * FROM sussurros Where id_dest = ".$_SESSION['user']);
+$sussurros = $connection->query("SELECT * FROM sussurros Where id_dest = ".$_SESSION['user']." AND valido = 0");
 ?>
 
 <?php
@@ -24,13 +24,17 @@ if(isset($_SESSION["erro_img"])){
 	<div class="row perfil">
 		<div class="col-md-4">
 			<div class="container perfil-inicio">
-				<a href="" >
-					<span>
-						<img src="../imagens_perfil/perfil.jpg">
-						<h3><?php echo $user['nome']; ?></h3>
-					</span>
-				</a>
-			</div>
+				<div class="container">
+					<?php
+					if ($user['foto_perfil']!=NULL) {
+						$busca_foto = $connection->query("SELECT * FROM fotos WHERE cod_img =".$user['foto_perfil']);
+						$foto = $busca_foto->fetch();
+						echo "<img class='imagem-perfil' src='".$foto["arquivo"]."'>";
+					}
+					?>
+					<h3 class="nome-perfil"><?php echo $user['nome']; ?></h3>
+				</div>
+			</div> 
 
 			<div class="informacoes-perfil">
 				<div class="titulo-informacoes">
@@ -41,13 +45,18 @@ if(isset($_SESSION["erro_img"])){
 				<div class="sussurros">
 
 					<?php
+					if ($sussurros->rowCount()==0) {
+						echo "<h6> Sem mensagens!<h6>";
+					}
 						while ($sussurro = $sussurros->fetch()) {
-							echo "<div>
+						echo "<div>
 						<img src='../imagens_gerais/Sigilo.png'>
 						<span>
 							<p>".$sussurro["texto"]."</p>
-							<button class='denuncia' onclick='denunciar('#sussurro-1')'>Denunciar</button>
-							<input type='hidden' name='sussurro-".$sussurro["cod_sussurro"]."' id='sussurro-".$sussurro["cod_sussurro"]."' value='".$sussurro["cod_sussurro"]."'>
+							<form method='post' action='denunciar.php'>
+							<button type='submit' class='denuncia'>Denunciar</button>
+							<input type='hidden' name='sussurro-denunciado' value='".$sussurro["cod_sussurro"]."'>
+							</form>
 						</span>
 					</div>";
 						}

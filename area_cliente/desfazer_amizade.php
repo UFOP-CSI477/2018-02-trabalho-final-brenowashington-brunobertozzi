@@ -19,6 +19,6 @@ try{
 }catch(PDOException $e) {
 	echo 'Error: ' . $e->getMessage();
 }
-$_SESSION['amigo'] = $_SESSION['user'];
+$_SESSION['amigo'] = $amigo;
 header('Location: perfil.php');
 ?>
