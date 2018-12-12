@@ -104,6 +104,14 @@ $(document).ready(function(){
 	   return valido;
 	})
 
+	$("#excluir_user").on("submit",function(){
+		if( confirm('Tem certeza que deseja excluir sua conta?') )
+			return true;
+		else {
+			return false;
+		}
+	})
+
 
 });
 

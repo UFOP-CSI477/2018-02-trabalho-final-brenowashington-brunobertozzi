@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if (!isset($_SESSION['user'])) {
-		
+
 }
 include("../conexao.php");
 $consulta = $connection->query("SELECT * FROM usuarios Where id = ".$_SESSION['user']);
@@ -73,6 +73,12 @@ if(isset($_SESSION["erro_senha"])){
 			<div class="form-group">
 				<button type="submit" name="botao_editar" id="botao_editar" class="btn">Editar</button> 
 			</div>
+		</form>
+
+
+
+		<form id="excluir_user" class="justify-content-end" method="post" action="excluir.php">
+			<button type="submit" name="botao_excluir" id="botao_excluir" class="btn">Excluir conta!</button> 
 		</form>
 	</div>
 </div>

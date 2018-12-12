@@ -7,9 +7,10 @@ if (!isset($_POST['sussurro-denunciado'])) {
 	header('Location: ../inicio.php');
 }
 $denunciado = $_POST['sussurro-denunciado'];
+if()
 include("../conexao.php");
 try{
-	$busca = $connection->query("SELECT * FROM sussurros Where cod_sussurro =".$denunciado." AND id_dest = ".$_SESSION['user']);
+	$busca = $connection->query("SELECT * FROM sussurros Where cod_sussurro =".$denunciado); /*AND id_dest = ".$_SESSION['user']");*/
 	if($busca->rowCount() > 0){
 		$sussurro = $busca->fetch();
 		$stmt = $connection->prepare('INSERT INTO denuncias (id,cod_sussurro,created_at,updated_at) VALUES(:id,:cod,NOW(),NOW())');
